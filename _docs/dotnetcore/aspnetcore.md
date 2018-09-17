@@ -3,7 +3,6 @@ title: ASP.NET Core
 category: .NET Core
 order: 1
 ---
-# ASP.NET Core
 
 ## Deploy ASP.NET Core to Azure Container Registry
 

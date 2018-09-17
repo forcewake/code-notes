@@ -3,7 +3,6 @@ title: Commands for Kubernetes
 category: Kubernetes
 order: 1
 ---
-# Commands for Kubernetes
 
 Here are the commands that I've used for Kubernetes before.
 
