@@ -1,7 +1,7 @@
 ---
 title: Github
 category: Unix
-order: 1
+order: 3
 ---
 
 ## How to avoid being asked passphrase each time I push to remote git
