@@ -23,6 +23,20 @@ or for all namespaces
 ``` bash
 kubectl get po --all-namespaces
 ```
+Expected output:
+``` bash
+NAMESPACE     NAME                                         READY     STATUS             RESTARTS   AGE
+cluster       runner-896858db8-5vhq6                       0/1       ImagePullBackOff   0          1h
+docker        compose-7447646cf5-wxm68                     1/1       Running            1          1d
+docker        compose-api-6fbc44c575-s4bzx                 1/1       Running            1          1d
+kube-system   etcd-docker-for-desktop                      1/1       Running            1          1d
+kube-system   kube-apiserver-docker-for-desktop            1/1       Running            1          1d
+kube-system   kube-controller-manager-docker-for-desktop   1/1       Running            1          1d
+kube-system   kube-dns-86f4d74b45-5ddnp                    3/3       Running            3          1d
+kube-system   kube-proxy-vhns5                             1/1       Running            1          1d
+kube-system   kube-scheduler-docker-for-desktop            1/1       Running            1          1d
+kube-system   tiller-deploy-67d8b477f7-lc592               1/1       Running            0          22h
+```
 
 ## Get information about a Pod in selected namespace
 
