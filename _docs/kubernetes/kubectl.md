@@ -19,6 +19,10 @@ or take a look to yaml
 ``` bash
 kubectl get po -n cluster runner-896858db8-5vhq6 -oyaml
 ```
+or for all namespaces
+``` bash
+kubectl get po --all-namespaces
+```
 
 ## Get information about a Pod in selected namespace
 
