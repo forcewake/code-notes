@@ -11,6 +11,58 @@ Here are the commands that I've used for Kubernetes before.
 ``` bash
 kubectl get pods
 ```
+or short version with selected namespace
+``` bash
+kubectl get po -n cluster
+```
+or take a look to yaml
+``` bash
+kubectl get po -n cluster runner-896858db8-5vhq6 -oyaml
+```
+
+## Get information about a Pod in selected namespace
+
+``` bash
+kubectl describe po -n cluster runner-896858db8-tdfgv
+```
+
+Expected output:
+``` bash
+Name:           runner-896858db8-tdfgv
+Namespace:      cluster
+Node:           docker-for-desktop/192.168.65.3
+Start Time:     Tue, 11 Sep 2018 15:06:35 +0300
+Labels:         chart=runner-3.5.2
+                component=runner
+                heritage=Tiller
+                pod-template-hash=452414864
+                release=runner
+                updated=1536661796
+Annotations:    <none>
+Status:         Running
+IP:             10.1.0.8
+Controlled By:  ReplicaSet/runner-896858db8
+Containers:
+...
+
+Events:
+  Type     Reason                 Age               From                         Message
+  ----     ------                 ----              ----                         -------
+  Normal   Scheduled              1m                default-scheduler            Successfully assigned runner-896858db8-tdfgv to docker-for-desktop
+  Normal   SuccessfulMountVolume  1m                kubelet, docker-for-desktop  MountVolume.SetUp succeeded for volume "runner-token-5clzz"
+  Normal   Pulling                30s (x4 over 1m)  kubelet, docker-for-desktop  pulling image "runner:3.5.2"
+  Normal   Pulled                 28s (x4 over 1m)  kubelet, docker-for-desktop  Successfully pulled image "runner:3.5.2"
+  Normal   Created                28s (x4 over 1m)  kubelet, docker-for-desktop  Created container
+  Normal   Started                28s (x4 over 1m)  kubelet, docker-for-desktop  Started container
+  Warning  BackOff                10s (x5 over 1m)  kubelet, docker-for-desktop  Back-off restarting failed container
+
+```
+
+## Delete a Pod
+
+``` bash
+kubectl delete po -n cluster runner-896858db8-5vhq6
+```
 
 ## List all Services
 
@@ -42,4 +94,20 @@ kubectl get service dont-starve --watch
 
 ``` bash
 kubectl logs dont-starve-403593606-zqb6w
+```
+
+## Get logs from selected namespace
+
+``` bash
+kubectl logs -n cluster runner-896858db8-tdfgv
+```
+
+Expected output:
+``` bash
+{"@message":"Init helm","@timestamp":"2018-09-11T12:07:49.987Z","@fields":{"level":"info"}}
+{"@message":"start  helm init --upgrade","@timestamp":"2018-09-11T12:07:49.988Z","@fields":{"level":"debug"}}
+{"@message":"call   helm init --upgrade","@timestamp":"2018-09-11T12:07:49.989Z","@fields":{"level":"debug"}}
+{"@message":"error  helm init --upgrade","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
+{"@message":"Error: error when upgrading: current Tiller version is newer, use --force-upgrade to downgrade\n","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
+{"@message":"","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
 ```
