@@ -1,5 +1,5 @@
 ---
-title: Commands for History
+title: History
 category: Unix
 order: 5
 ---
