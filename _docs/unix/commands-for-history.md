@@ -1,7 +1,7 @@
 ---
 title: Commands for History
 category: Unix
-order: 3
+order: 5
 ---
 
 ## `grep` thought the bash command history 
