@@ -128,11 +128,11 @@ Expected output:
 {"@message":"error  helm init --upgrade","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
 {"@message":"Error: error when upgrading: current Tiller version is newer, use --force-upgrade to downgrade\n","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
 {"@message":"","@timestamp":"2018-09-11T12:07:50.969Z","@fields":{"level":"error"}}
+```
 
 ## Use infrastructure services outside the cluster
 
 If you want to use some service from outside the cluster (for example, postgres or redis for local development) consider using k8s [port-forwarding](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/). For example, redis from local k8s cluster can be exposed like:
 ```
  kubectl port-forward svc/redis-master-svc -n redis 6379:6379
-```
 ```
