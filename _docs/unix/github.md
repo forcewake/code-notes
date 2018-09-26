@@ -1,5 +1,5 @@
 ---
-title: Github
+title: Git
 category: Unix
 order: 3
 ---
@@ -11,7 +11,7 @@ A way to solve this is with `ssh-agent` and `ssh-add`:
 ```bash
 $ exec ssh-agent bash
 $ ssh-add
-Enter passphrase for ~/.ssh/id_rsa: 
+Enter passphrase for ~/.ssh/id_rsa:
 ```
 
 After this the passphrase is saved for the current session. and won't be asked again.
