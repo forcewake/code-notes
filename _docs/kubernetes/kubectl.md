@@ -6,6 +6,8 @@ order: 1
 
 Here are the commands that I've used for Kubernetes before.
 
+Some of them are from [this gist](https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4#volumes)
+
 Helper setup to edit .yaml files with Vim:
 
 - [VIM Setup for Yaml files](#vim-setup-for-yaml-files)
