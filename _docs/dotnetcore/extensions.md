@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core
+title: ASP.NET Core Extensions
 category: .NET Core
 order: 2
 ---
