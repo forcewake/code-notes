@@ -16,3 +16,20 @@ docker ps -a
 docker tag 8b mycr.azurecr.io/folder/image-name
 docker push mycr.azurecr.io/folder/image-name
 ```
+
+## Add cshtml file as embedded razor view resource 
+
+You will need to add the following line to the project containing any embedded razor views.
+
+``` xml
+<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+```
+
+Than add information about embedded view to you `csproj` file:
+```
+<ItemGroup>
+  <EmbeddedResource Include="Path\To\File.cshtml">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </EmbeddedResource>
+</ItemGroup>
+```
